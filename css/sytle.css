@@ -1,0 +1,18 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-color: red;
+}
+
+* {
+    background-color: aquamarine;
+}
+
+ul {
+    margin: 25px;
+}
+
+ol {
+    padding: 25px;
+    list-style: disc;
+    
+}
