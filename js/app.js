@@ -76,7 +76,7 @@ if(answerFive === 'yes' || answerFive === 'y'){
 // It should give the user exactly four opportunities to get the correct answer.
 // After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
 let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
-const randomNumber = 25; //Math.floor(Math.random() * 100) + 1;
+const randomNumber = Math.floor(Math.random() * 100) + 1;
 console.log(questionSix);
 console.log(randomNumber);
 const correctAnswerGuess = randomNumber;
@@ -119,10 +119,12 @@ for (let userAttempts = 0; userAttempts <= 6; userAttempts++){
   }else if(questionSeven === questionSevenAnswer[0] && userAttempts === 0){
     alert(`Congrats ${userName} you got this on your first try! Here are all the possible answers ${questionSevenAnswer}`);
     amountCorrect = amountCorrect + 1;
+    alert(`Hey ${userName} you to ${amountCorrect}/7`);
     break;
   }else if(questionSeven === questionSevenAnswer[0]){
     alert(`Congrats ${userName} you got this the right answer! Here are all the possible answers ${questionSevenAnswer}`);
     amountCorrect = amountCorrect + 1;
+    alert(`Hey ${userName} you to ${amountCorrect}/7`);
     break;
   }else if (userAttempts === 6){
     alert(`I guess you don't like nSync ${userName}? The correct answers were ${questionSevenAnswer}`);
