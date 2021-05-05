@@ -108,44 +108,26 @@ for ( let i = 3; i >= 0; i--){
   }
 }
 // Add a 7th question that has multiple possible correct answers that are stored in an array.
-let questionSeven = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync?`).toLocaleUpperCase();
-let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS' ];
+let questionSeven = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync?`).toUpperCase();
+let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
 // Give the user 6 attempts to guess the correct answer.
 for (let userAttempts = 0; userAttempts <= 6; userAttempts++){
-  if (questionSeven !== questionSevenAnswer && userAttempts < 4){
-    prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? Hint: Try looking at the nSync wikipedia page for the answer!`);
-  }else if (questionSeven !== questionSevenAnswer && userAttempts === 5){
-    questionSeven = prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? This will be your last attempt before we give you the answers!`);
-  }else if(questionSeven === questionSevenAnswer[0] && userAttempts === 0){
-    alert(`Congrats ${userName} you got this on your first try! Here are all the possible answers ${questionSevenAnswer}`);
-    amountCorrect = amountCorrect + 1;
-    alert(`Hey ${userName} you to ${amountCorrect}/7`);
-    break;
-  }else if(questionSeven === questionSevenAnswer[0]){
-    alert(`Congrats ${userName} you got this the right answer! Here are all the possible answers ${questionSevenAnswer}`);
-    amountCorrect = amountCorrect + 1;
-    alert(`Hey ${userName} you to ${amountCorrect}/7`);
-    break;
-  }else if (userAttempts === 6){
-    alert(`I guess you don't like nSync ${userName}? The correct answers were ${questionSevenAnswer}`);
-    alert(`Hey ${userName} you to ${amountCorrect}/7`);
-    break;
-  }
+  for (let sevenAnswers = 0; questionSevenAnswer.length <= 9; sevenAnswers++)
+    if (questionSeven !== sevenAnswers && userAttempts < 4){
+      prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? Hint: Try looking at the nSync wikipedia page for the answer!`);
+    }else if (questionSeven !== sevenAnswers && userAttempts === 5){
+      questionSeven = prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? This will be your last attempt before we give you the answers!`);
+    }else if(questionSeven === sevenAnswers && userAttempts === 0){
+      alert(`Congrats ${userName} you got this on your first try! Here are all the possible answers ${questionSevenAnswer}`);
+      amountCorrect = amountCorrect + 1;
+      break;
+    }else if(questionSeven === sevenAnswers){
+      alert(`Congrats ${userName} you got this the right answer! Here are all the possible answers ${questionSevenAnswer}`);
+      amountCorrect = amountCorrect + 1;
+      break;
+    }else if (userAttempts === 6){
+      alert(`I guess you don't like nSync ${userName}? The correct answers were ${questionSevenAnswer}`);
+      break;
+    }
 }
-// The guesses will end once the user guesses a correct answer or they run out of attempts.
-// Display all the possible correct answers to the user.
-// Consider using a loop of some sort for this question.
-
-// let guess = prompt('Did you enjoy the quiz ' + userName + '?').toLowerCase();
-
-// if(guess === 'yes' || guess === 'y'){
-//   //console.log(guess);
-//   alert('Awesome glad you liked the test ' + userName + '!');
-// }else if (guess === 'no' || guess === 'n'){
-//   alert('Sorry to hear you didn\'t like the quiz ' + userName + '!');
-// }else {
-//   alert('Welp I can\'t help you');
-// }
-
-
-
+alert(`Hey ${userName} you to ${amountCorrect}/7`);

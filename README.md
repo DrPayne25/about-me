@@ -5,7 +5,8 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 
 ## Author: Alex
 
-### Collaborators 
+### Collaborators
+Charlie Fadness  
 
 ### Links and Resources
 - submission PR
