@@ -52,17 +52,19 @@ function questionThree(){
 }
 questionThree();
 
-let answerFour = prompt('Have I played Hearthstone for over 2555 days?').toLocaleLowerCase();
-
-if(answerFour === 'yes' || answerFour === 'y'){
-  //console.log(answerFour);
-  alert('You are correct! I have played Hearthstone for over 2555 days (or 7 years) ' + userName + '!');
-  amountCorrect = amountCorrect + 1;
-}else if (answerFour === 'no' || answerFour === 'n'){
-  alert('Incorrect');
-}else {
-  alert('You could at least try!!!');
+function questionFour(){
+  let answerFour = prompt('Have I played Hearthstone for over 2555 days?').toLocaleLowerCase();
+  if(answerFour === 'yes' || answerFour === 'y'){
+    //console.log(answerFour);
+    alert('You are correct! I have played Hearthstone for over 2555 days (or 7 years) ' + userName + '!');
+    amountCorrect = amountCorrect + 1;
+  }else if (answerFour === 'no' || answerFour === 'n'){
+    alert('Incorrect');
+  }else {
+    alert('You could at least try!!!');
+  }
 }
+questionFour();
 
 let answerFive = prompt('Do I want to be an SRE in the Future?').toLocaleLowerCase();
 
