@@ -24,7 +24,7 @@ function questionOne(){
 }
 questionOne();
 
-function quetsionTwo(){
+function questionTwo(){
   let answerTwo = prompt('Did I Study at UW for 2 years?').toLocaleLowerCase();
   if(answerTwo === 'yes' || answerTwo === 'y'){
     //console.log(answerTwo);
@@ -36,19 +36,21 @@ function quetsionTwo(){
     alert('You could at least try!!!');
   }
 }
-quetsionTwo();
+questionTwo();
 
-let answerThree = prompt('Did I work at on a Presidential Campaign at any point?').toLocaleLowerCase();
-
-if(answerThree === 'yes' || answerThree === 'y'){
-  //console.log(answerThree);
-  alert('You are correct! I did work for a Presidential Campaign between 2018-2019 ' + userName + '!');
-  amountCorrect = amountCorrect + 1;
-}else if (answerThree === 'no' || answerThree === 'n'){
-  alert('Incorrect');
-}else {
-  alert('You could at least try!!!');
+function questionThree(){
+  let answerThree = prompt('Did I work at on a Presidential Campaign at any point?').toLocaleLowerCase();
+  if(answerThree === 'yes' || answerThree === 'y'){
+    //console.log(answerThree);
+    alert('You are correct! I did work for a Presidential Campaign between 2018-2019 ' + userName + '!');
+    amountCorrect = amountCorrect + 1;
+  }else if (answerThree === 'no' || answerThree === 'n'){
+    alert('Incorrect');
+  }else {
+    alert('You could at least try!!!');
+  }
 }
+questionThree();
 
 let answerFour = prompt('Have I played Hearthstone for over 2555 days?').toLocaleLowerCase();
 
