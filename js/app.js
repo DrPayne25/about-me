@@ -9,17 +9,20 @@ let amountCorrect = 0;
 
 alert('Welcome ' + userName + '! Please answer all question with yes/no or y/n');
 
-let answerOne = prompt('Do I live in Lynnwood?').toLocaleLowerCase();
 
-if(answerOne === 'yes' || answerOne === 'y'){
-  //console.log(answerOne);
-  alert('You are correct! I do live in Lynnwood ' + userName + '!');
-  amountCorrect = amountCorrect +1;
-}else if (answerOne === 'no' || answerOne === 'n'){
-  alert('Incorrect Try again');
-}else {
-  alert('You could at least try!!!');
+function questionOne(){
+  let answerOne = prompt('Do I live in Lynnwood?').toLocaleLowerCase();
+  if(answerOne === 'yes' || answerOne === 'y'){
+    //console.log(answerOne);
+    alert('You are correct! I do live in Lynnwood ' + userName + '!');
+    amountCorrect = amountCorrect +1;
+  }else if (answerOne === 'no' || answerOne === 'n'){
+    alert('Incorrect Try again');
+  }else {
+    alert('You could at least try!!!');
+  }
 }
+questionOne();
 
 let answerTwo = prompt('Did I Study at UW for 2 years?').toLocaleLowerCase();
 
