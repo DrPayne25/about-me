@@ -86,38 +86,43 @@ questionFive();
 // Indicates through an alert if the guess is “too high” or “too low”.
 // It should give the user exactly four opportunities to get the correct answer.
 // After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
-let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
-const randomNumber = Math.floor(Math.random() * 100) + 1;
-console.log(questionSix);
-console.log(randomNumber);
-const correctAnswerGuess = randomNumber;
 
-for ( let i = 3; i >= 0; i--){
-  if(questionSix === correctAnswerGuess){
-    //console.log(`Wow you got it congrats ${userName}`);
-    alert(`Wow you got it congrats ${userName}!`);
-    amountCorrect = amountCorrect + 1;
-    break;
-  // }if (i === 0){
-  //   alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
-  //   break;
-  }else if (questionSix > randomNumber && i > 1){
-    //console.log(`Bit to high on that one ${userName}!`);
-    questionSix = +prompt(`Bit to high on that one ${userName}! Please Try again`);
-  }else if (questionSix < randomNumber && i > 1){
-    //console.log(`Bit to low on that one ${userName}!`);
-    questionSix = +prompt(`Bit to low on that one ${userName}! Please Try again`);
-  }else if (questionSix > randomNumber && i === 1){
-    //console.log(`Bit to high on that one ${userName}!`);
-    questionSix = +prompt(`Bit to high on that one ${userName}! Last attempt before we give you the answer!`);
-  }else if (questionSix < randomNumber && i === 1){
-    //console.log(`Bit to low on that one ${userName}!`);
-    questionSix = +prompt(`Bit to low on that one ${userName}! This is your Last attempt before we give you the answer!`);
-  }else if (i === 0){
-    alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
-    break;
+function questionSix(){
+  let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  console.log(questionSix);
+  console.log(randomNumber);
+  const correctAnswerGuess = randomNumber;
+
+  for ( let i = 3; i >= 0; i--){
+    if(questionSix === correctAnswerGuess){
+      //console.log(`Wow you got it congrats ${userName}`);
+      alert(`Wow you got it congrats ${userName}!`);
+      amountCorrect = amountCorrect + 1;
+      break;
+    // }if (i === 0){
+    //   alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
+    //   break;
+    }else if (questionSix > randomNumber && i > 1){
+      //console.log(`Bit to high on that one ${userName}!`);
+      questionSix = +prompt(`Bit to high on that one ${userName}! Please Try again`);
+    }else if (questionSix < randomNumber && i > 1){
+      //console.log(`Bit to low on that one ${userName}!`);
+      questionSix = +prompt(`Bit to low on that one ${userName}! Please Try again`);
+    }else if (questionSix > randomNumber && i === 1){
+      //console.log(`Bit to high on that one ${userName}!`);
+      questionSix = +prompt(`Bit to high on that one ${userName}! Last attempt before we give you the answer!`);
+    }else if (questionSix < randomNumber && i === 1){
+      //console.log(`Bit to low on that one ${userName}!`);
+      questionSix = +prompt(`Bit to low on that one ${userName}! This is your Last attempt before we give you the answer!`);
+    }else if (i === 0){
+      alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
+      break;
+    }
   }
 }
+questionSix();
+
 // Add a 7th question that has multiple possible correct answers that are stored in an array.
 let questionSeven = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync?`).toUpperCase();
 let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
