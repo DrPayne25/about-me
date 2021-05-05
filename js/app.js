@@ -66,17 +66,19 @@ function questionFour(){
 }
 questionFour();
 
-let answerFive = prompt('Do I want to be an SRE in the Future?').toLocaleLowerCase();
-
-if(answerFive === 'yes' || answerFive === 'y'){
-  //console.log(answerFive);
-  alert('You are correct! I do want to be an SRE in the future ' + userName + '!');
-  amountCorrect = amountCorrect + 1;
-}else if (answerFive === 'no' || answerFive === 'n'){
-  alert('Incorrect');
-}else {
-  alert('You could at least try!!!');
+function questionFive(){
+  let answerFive = prompt('Do I want to be an SRE in the Future?').toLocaleLowerCase();
+  if(answerFive === 'yes' || answerFive === 'y'){
+    //console.log(answerFive);
+    alert('You are correct! I do want to be an SRE in the future ' + userName + '!');
+    amountCorrect = amountCorrect + 1;
+  }else if (answerFive === 'no' || answerFive === 'n'){
+    alert('Incorrect');
+  }else {
+    alert('You could at least try!!!');
+  }
 }
+questionFive();
 
 // Add a 6th Question with a prompt and ask them to enter a number
 /*after your first for statement add a prompt that would be used as a catch all prompt that would be the only one*/
