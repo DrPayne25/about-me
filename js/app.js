@@ -24,17 +24,19 @@ function questionOne(){
 }
 questionOne();
 
-let answerTwo = prompt('Did I Study at UW for 2 years?').toLocaleLowerCase();
-
-if(answerTwo === 'yes' || answerTwo === 'y'){
-  //console.log(answerTwo);
-  alert('You are correct! I did study at UW for 2 years ' + userName + '!');
-  amountCorrect = amountCorrect + 1;
-}else if (answerTwo === 'no' || answerTwo === 'n'){
-  alert('Incorrect Try again');
-}else {
-  alert('You could at least try!!!');
+function quetsionTwo(){
+  let answerTwo = prompt('Did I Study at UW for 2 years?').toLocaleLowerCase();
+  if(answerTwo === 'yes' || answerTwo === 'y'){
+    //console.log(answerTwo);
+    alert('You are correct! I did study at UW for 2 years ' + userName + '!');
+    amountCorrect = amountCorrect + 1;
+  }else if (answerTwo === 'no' || answerTwo === 'n'){
+    alert('Incorrect Try again');
+  }else {
+    alert('You could at least try!!!');
+  }
 }
+quetsionTwo();
 
 let answerThree = prompt('Did I work at on a Presidential Campaign at any point?').toLocaleLowerCase();
 
