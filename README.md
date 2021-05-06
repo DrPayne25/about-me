@@ -7,7 +7,8 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 
 ### Collaborators
 Charlie Fadness  
-Phil Murphy (Driver) to Alex's (Navigator)
+Phil Murphy (Driver): https://github.com/phmurphy212/about-me/pull/1 
+Alex's (Navigator):https://github.com/DrPayne25/about-me/pull/1
 
 ### Links and Resources
 - submission PR
