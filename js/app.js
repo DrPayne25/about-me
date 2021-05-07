@@ -4,88 +4,133 @@
 
 let userName = prompt('Welcome to the Alex Payne Quiz what\'s your name?');
 let amountCorrect = 0;
+const questions = ['Do I live in Lynnwood?',
+  'Did I Study at UW for 4 years?',
+  'Did I work on a Presidential Campaign between 2016-2018?',
+  'Have I played Hearthstone for over 2555 days?',
+  'Do I want to be an site reliability engineer in the Future?'];
 
-//console.log(userName);
+const correctMessages = [`You are correct! I do live in Lynnwood ${userName}!`,
+  `You are correct ${userName}! I only studied at UW for 2 years and then dropped out what can I say!`,
+  `Correct ${userName}! I actually worked for a Presidential Campaign between 2018-2019!`,
+  `Correct i've played Hearthstone for over 7 years now. Now I know what your thinking ${userName} don't I have something better to do than play games and the answer is no!`,
+  `Don't Know how you knew that but correct I do want to be a SRE in the future ${userName}!`];
 
-alert('Welcome ' + userName + '! Please answer all question with yes/no or y/n');
+const wrongMessages = [`Sorry but its true I do live in Lynnwood ${userName}`,
+  `Nope only ended up lasting 2 years I know I know try harder! Lets hope Codefellows doesn't go that way ${userName}!`,
+  `Gotcha I didn't work for presidential campaign between 2016-2018 I actually worked for a one from 2018-2019! I'm sure you'll get the next one ${userName}`,
+  `I actually have played hearthstone for over 2555 days ${userName}`,
+  `Actually I do want to be an SRE in the future ${userName}. It seems like such a fun job to do what can I say i'm a nerd!`];
+const correctAnswers = ['yes', 'no', 'no', 'yes', 'yes'];
+const badAnswer = `Tsk Tsk ${userName}! You didn't read the instructions very carefully going to skip this one for you.`;
+alert('Welcome ' + userName + '! Please answer the next 5 questions with yes/no or y/n');
 
-
-function questionOne(){
-  let answerOne = prompt('Do I live in Lynnwood?').toLocaleLowerCase();
-  if(answerOne === 'yes' || answerOne === 'y'){
-    //console.log(answerOne);
-    alert('You are correct! I do live in Lynnwood ' + userName + '!');
-    amountCorrect = amountCorrect +1;
-  }else if (answerOne === 'no' || answerOne === 'n'){
-    alert('Incorrect Try again');
-  }else {
-    alert('You could at least try!!!');
+function askQuestions() {
+  for (let b = 0; b < questions.length; b++){
+    let answer = prompt(questions[b]).toLowerCase();
+    switch (answer) {
+    case 'no':
+    case 'n':
+      if(correctAnswers[b] === 'no') {
+        amountCorrect++;
+        alert(correctMessages[b] + ` You have ${amountCorrect} correct so far.`);
+      } else {
+        alert(wrongMessages[b] + ' ' + `You have ${amountCorrect} correct so far.`);
+      }
+      break;
+    case 'yes':
+    case 'y':
+      if(correctAnswers[b] === 'yes'){
+        amountCorrect++;
+        alert(correctMessages[b] + ` You have ${amountCorrect} correct so far.`);
+      } else {
+        alert(wrongMessages[b] + ` You have ${amountCorrect} correct so far.`);
+      }
+      break;
+    default:
+      alert(badAnswer);
+    }
   }
 }
-questionOne();
+askQuestions();
 
-function questionTwo(){
-  let answerTwo = prompt('Did I Study at UW for 2 years?').toLocaleLowerCase();
-  if(answerTwo === 'yes' || answerTwo === 'y'){
-    //console.log(answerTwo);
-    alert('You are correct! I did study at UW for 2 years ' + userName + '!');
-    amountCorrect = amountCorrect + 1;
-  }else if (answerTwo === 'no' || answerTwo === 'n'){
-    alert('Incorrect Try again');
-  }else {
-    alert('You could at least try!!!');
-  }
-}
-questionTwo();
 
-function questionThree(){
-  let answerThree = prompt('Did I work at on a Presidential Campaign at any point?').toLocaleLowerCase();
-  if(answerThree === 'yes' || answerThree === 'y'){
-    //console.log(answerThree);
-    alert('You are correct! I did work for a Presidential Campaign between 2018-2019 ' + userName + '!');
-    amountCorrect = amountCorrect + 1;
-  }else if (answerThree === 'no' || answerThree === 'n'){
-    alert('Incorrect');
-  }else {
-    alert('You could at least try!!!');
-  }
-}
-questionThree();
+// function questionOne(){
+//   let answerOne = prompt('Do I live in Lynnwood?').toLocaleLowerCase();
+//   if(answerOne === 'yes' || answerOne === 'y'){
+//     //console.log(answerOne);
+//     alert('You are correct! I do live in Lynnwood ' + userName + '!');
+//     amountCorrect = amountCorrect +1;
+//   }else if (answerOne === 'no' || answerOne === 'n'){
+//     alert('Incorrect Try again');
+//   }else {
+//     alert('You could at least try!!!');
+//   }
+// }
+// questionOne();
 
-function questionFour(){
-  let answerFour = prompt('Have I played Hearthstone for over 2555 days?').toLocaleLowerCase();
-  if(answerFour === 'yes' || answerFour === 'y'){
-    //console.log(answerFour);
-    alert('You are correct! I have played Hearthstone for over 2555 days (or 7 years) ' + userName + '!');
-    amountCorrect = amountCorrect + 1;
-  }else if (answerFour === 'no' || answerFour === 'n'){
-    alert('Incorrect');
-  }else {
-    alert('You could at least try!!!');
-  }
-}
-questionFour();
+// function questionTwo(){
+//   let answerTwo = prompt('Did I Study at UW for 4 years?').toLocaleLowerCase();
+//   if(answerTwo === 'no' || answerTwo === 'n'){
+//     //console.log(answerTwo);
+//     alert('You are correct! I only studied at UW for 2 years ' + userName + '!');
+//     amountCorrect = amountCorrect + 1;
+//   }else if (answerTwo === 'yes' || answerTwo === 'yes'){
+//     alert('Incorrect Try again');
+//   }else {
+//     alert('You could at least try!!!');
+//   }
+// }
+// questionTwo();
 
-function questionFive(){
-  let answerFive = prompt('Do I want to be an SRE in the Future?').toLocaleLowerCase();
-  if(answerFive === 'yes' || answerFive === 'y'){
-    //console.log(answerFive);
-    alert('You are correct! I do want to be an SRE in the future ' + userName + '!');
-    amountCorrect = amountCorrect + 1;
-  }else if (answerFive === 'no' || answerFive === 'n'){
-    alert('Incorrect');
-  }else {
-    alert('You could at least try!!!');
-  }
-}
-questionFive();
+// function questionThree(){
+//   let answerThree = prompt('Did I work at on a Presidential Campaign at any point?').toLocaleLowerCase();
+//   if(answerThree === 'yes' || answerThree === 'y'){
+//     //console.log(answerThree);
+//     alert('You are correct! I worked for a Presidential Campaign between 2018-2019 ' + userName + '!');
+//     amountCorrect = amountCorrect + 1;
+//   }else if (answerThree === 'no' || answerThree === 'n'){
+//     alert('Incorrect');
+//   }else {
+//     alert('You could at least try!!!');
+//   }
+// }
+// questionThree();
 
-// Add a 6th Question with a prompt and ask them to enter a number
-/*after your first for statement add a prompt that would be used as a catch all prompt that would be the only one*/
-// Add a 6th question to the guessing game that takes in a numeric input by prompting the user to guess a number.
-// Indicates through an alert if the guess is “too high” or “too low”.
-// It should give the user exactly four opportunities to get the correct answer.
-// After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
+// function questionFour(){
+//   let answerFour = prompt('Have I played Hearthstone for over 2555 days?').toLocaleLowerCase();
+//   if(answerFour === 'yes' || answerFour === 'y'){
+//     //console.log(answerFour);
+//     alert('You are correct! I have played Hearthstone for over 2555 days (or 7 years) ' + userName + '!');
+//     amountCorrect = amountCorrect + 1;
+//   }else if (answerFour === 'no' || answerFour === 'n'){
+//     alert('Incorrect');
+//   }else {
+//     alert('You could at least try!!!');
+//   }
+// }
+// questionFour();
+
+// function questionFive(){
+//   let answerFive = prompt('Do I want to be an SRE in the Future?').toLocaleLowerCase();
+//   if(answerFive === 'yes' || answerFive === 'y'){
+//     //console.log(answerFive);
+//     alert('You are correct! I do want to be an SRE in the future ' + userName + '!');
+//     amountCorrect = amountCorrect + 1;
+//   }else if (answerFive === 'no' || answerFive === 'n'){
+//     alert('Incorrect');
+//   }else {
+//     alert('You could at least try!!!');
+//   }
+// }
+// questionFive();
+
+// // Add a 6th Question with a prompt and ask them to enter a number
+// /*after your first for statement add a prompt that would be used as a catch all prompt that would be the only one*/
+// // Add a 6th question to the guessing game that takes in a numeric input by prompting the user to guess a number.
+// // Indicates through an alert if the guess is “too high” or “too low”.
+// // It should give the user exactly four opportunities to get the correct answer.
+// // After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
 
 function questionSix(){
   let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
@@ -150,4 +195,4 @@ function questionSeven(){
 }
 questionSeven();
 
-alert(`Hey ${userName} you to ${amountCorrect}/7`);
+// alert(`Hey ${userName} you to ${amountCorrect}/7`);
