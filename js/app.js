@@ -25,6 +25,7 @@ const correctAnswers = ['yes', 'no', 'no', 'yes', 'yes'];
 const badAnswer = `Tsk Tsk ${userName}! You didn't read the instructions very carefully going to skip this one for you.`;
 alert('Welcome ' + userName + '! Please answer the next 5 questions with yes/no or y/n');
 
+//Question 1-5
 function askQuestions() {
   for (let b = 0; b < questions.length; b++){
     let answer = prompt(questions[b]).toLowerCase();
@@ -54,6 +55,70 @@ function askQuestions() {
 }
 askQuestions();
 
+//Question 6
+function questionSix(){
+  let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  console.log(questionSix);
+  console.log(randomNumber);
+  const correctAnswerGuess = randomNumber;
+
+  for ( let i = 3; i >= 0; i--){
+    if(questionSix === correctAnswerGuess){
+      //console.log(`Wow you got it congrats ${userName}`);
+      alert(`Wow you got it congrats ${userName}!`);
+      amountCorrect = amountCorrect + 1;
+      break;
+    // }if (i === 0){
+    //   alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
+    //   break;
+    }else if (questionSix > randomNumber && i > 1){
+      //console.log(`Bit to high on that one ${userName}!`);
+      questionSix = +prompt(`Bit to high on that one ${userName}! Please Try again`);
+    }else if (questionSix < randomNumber && i > 1){
+      //console.log(`Bit to low on that one ${userName}!`);
+      questionSix = +prompt(`Bit to low on that one ${userName}! Please Try again`);
+    }else if (questionSix > randomNumber && i === 1){
+      //console.log(`Bit to high on that one ${userName}!`);
+      questionSix = +prompt(`Bit to high on that one ${userName}! Last attempt before we give you the answer!`);
+    }else if (questionSix < randomNumber && i === 1){
+      //console.log(`Bit to low on that one ${userName}!`);
+      questionSix = +prompt(`Bit to low on that one ${userName}! This is your Last attempt before we give you the answer!`);
+    }else if (i === 0){
+      alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
+      break;
+    }
+  }
+}
+questionSix();
+
+// Question 7 
+let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
+let q7Attempts = 6;
+let correctGuess7 = false;
+
+function question7(){
+  while (q7Attempts && !correctGuess7){
+    let question7 = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync? You have ${q7Attempts} attempts to guess.`).toUpperCase();
+    //moves q7attempts down by 1
+    q7Attempts--;
+    for(let i = 0; i < questionSevenAnswer.length; i++){
+      if (question7 === questionSevenAnswer[i]){
+        correctGuess7 = true;
+      }
+    }
+  } if (!correctGuess7){
+    alert(`Hey, ${userName} that wasn't quite right you have ${q7Attempts} attempts left. Hint: Try looking at the nSync wikipedia page for the answer!`);
+  } else {
+    alert(`Wow you really know your nSync band members ${userName}! You had ${q7Attempts} more chances to get that right!`);
+    amountCorrect++;
+  }
+  alert(`The correct names for the band nSync are ${questionSevenAnswer}.`);
+}
+
+question7();
+
+alert(`Hey ${userName} you got ${amountCorrect}/7`);
 
 // function questionOne(){
 //   let answerOne = prompt('Do I live in Lynnwood?').toLocaleLowerCase();
@@ -132,67 +197,33 @@ askQuestions();
 // // It should give the user exactly four opportunities to get the correct answer.
 // // After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
 
-function questionSix(){
-  let questionSix = +prompt(`I'm thinking of a number between 0-100 can you guess what it is ${userName}? Please enter a number between 0-100`);
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
-  console.log(questionSix);
-  console.log(randomNumber);
-  const correctAnswerGuess = randomNumber;
 
-  for ( let i = 3; i >= 0; i--){
-    if(questionSix === correctAnswerGuess){
-      //console.log(`Wow you got it congrats ${userName}`);
-      alert(`Wow you got it congrats ${userName}!`);
-      amountCorrect = amountCorrect + 1;
-      break;
-    // }if (i === 0){
-    //   alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
-    //   break;
-    }else if (questionSix > randomNumber && i > 1){
-      //console.log(`Bit to high on that one ${userName}!`);
-      questionSix = +prompt(`Bit to high on that one ${userName}! Please Try again`);
-    }else if (questionSix < randomNumber && i > 1){
-      //console.log(`Bit to low on that one ${userName}!`);
-      questionSix = +prompt(`Bit to low on that one ${userName}! Please Try again`);
-    }else if (questionSix > randomNumber && i === 1){
-      //console.log(`Bit to high on that one ${userName}!`);
-      questionSix = +prompt(`Bit to high on that one ${userName}! Last attempt before we give you the answer!`);
-    }else if (questionSix < randomNumber && i === 1){
-      //console.log(`Bit to low on that one ${userName}!`);
-      questionSix = +prompt(`Bit to low on that one ${userName}! This is your Last attempt before we give you the answer!`);
-    }else if (i === 0){
-      alert(`You've exceed the maximum number of attempts. The correct answer was ${correctAnswerGuess} ${userName}!`);
-      break;
-    }
-  }
-}
-questionSix();
 
-function questionSeven(){
-  // Add a 7th question that has multiple possible correct answers that are stored in an array.
-  let questionSeven = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync?`).toUpperCase();
-  let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
-  // Give the user 6 attempts to guess the correct answer.
-  for (let userAttempts = 0; userAttempts <= 6; userAttempts++){
-    for (let sevenAnswers = 0; questionSevenAnswer.length <= 9; sevenAnswers++)
-      if (questionSeven !== sevenAnswers && userAttempts < 4){
-        prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? Hint: Try looking at the nSync wikipedia page for the answer!`);
-      }else if (questionSeven !== sevenAnswers && userAttempts === 5){
-        questionSeven = prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? This will be your last attempt before we give you the answers!`);
-      }else if(questionSeven === sevenAnswers && userAttempts === 0){
-        alert(`Congrats ${userName} you got this on your first try! Here are all the possible answers ${questionSevenAnswer}`);
-        amountCorrect = amountCorrect + 1;
-        break;
-      }else if(questionSeven === sevenAnswers){
-        alert(`Congrats ${userName} you got this the right answer! Here are all the possible answers ${questionSevenAnswer}`);
-        amountCorrect = amountCorrect + 1;
-        break;
-      }else if (userAttempts === 6){
-        alert(`I guess you don't like nSync ${userName}? The correct answers were ${questionSevenAnswer}`);
-        break;
-      }
-  }
-}
-questionSeven();
+
+// function questionSeven(){
+//   // Add a 7th question that has multiple possible correct answers that are stored in an array.
+//   let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
+//   // Give the user 6 attempts to guess the correct answer.
+//   for (let userAttempts = 0; userAttempts <= 6; userAttempts++){
+//     for (let sevenAnswers = 0; questionSevenAnswer.length <= 9; sevenAnswers++)
+//       if (questionSeven !== sevenAnswers && userAttempts < 4){
+//         prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? Hint: Try looking at the nSync wikipedia page for the answer!`);
+//       }else if (questionSeven !== sevenAnswers && userAttempts === 5){
+//         questionSeven = prompt(`Hey, ${userName} That wasn't quite right could I have you try that again for me? This will be your last attempt before we give you the answers!`);
+//       }else if(questionSeven === sevenAnswers && userAttempts === 0){
+//         alert(`Congrats ${userName} you got this on your first try! Here are all the possible answers ${questionSevenAnswer}`);
+//         amountCorrect = amountCorrect + 1;
+//         break;
+//       }else if(questionSeven === sevenAnswers){
+//         alert(`Congrats ${userName} you got this the right answer! Here are all the possible answers ${questionSevenAnswer}`);
+//         amountCorrect = amountCorrect + 1;
+//         break;
+//       }else if (userAttempts === 6){
+//         alert(`I guess you don't like nSync ${userName}? The correct answers were ${questionSevenAnswer}`);
+//         break;
+//       }
+//   }
+// }
+// questionSeven();
 
 // alert(`Hey ${userName} you to ${amountCorrect}/7`);
