@@ -92,7 +92,7 @@ function questionSix(){
 }
 questionSix();
 
-// Question 7 
+// Question 7
 
 function question7(){
   let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
