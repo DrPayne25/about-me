@@ -93,11 +93,11 @@ function questionSix(){
 questionSix();
 
 // Question 7 
-let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
-let q7Attempts = 6;
-let correctGuess7 = false;
 
 function question7(){
+  let questionSevenAnswer = ['JUSTIN', 'JUSTIN TIMBERLAKE', 'JC', 'JC CHASEZ', 'CHRIS', 'CHRIS KIRKPATRICK', 'JOEY', 'JOEY FATONE', 'LANCE', 'LANCE BASS'];
+  let q7Attempts = 6;
+  let correctGuess7 = false;
   while (q7Attempts && !correctGuess7){
     let question7 = prompt(`Hold on to your pants ${userName} this one is going to be a bit tricky! Can you name a member of the band N Sync? You have ${q7Attempts} attempts to guess.`).toUpperCase();
     //moves q7attempts down by 1
